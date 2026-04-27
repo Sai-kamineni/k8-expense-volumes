@@ -1,10 +1,10 @@
-kind: Service
+kind: Service                 #Headless service
 apiVersion: v1
 metadata:
   name: mysql-headless
   namespace: expense
 spec:
-  clusterIP: None # for headless service there is no cluster IP
+  clusterIP: None          # for headless service there is no cluster IP
   selector:
     project: expense
     component: mysql
@@ -13,7 +13,7 @@ spec:
   - protocol: TCP
     port: 3306 # service port
     targetPort: 3306
----
+---                               #Normal service 
 kind: Service
 apiVersion: v1
 metadata:
